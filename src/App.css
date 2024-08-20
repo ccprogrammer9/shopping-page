@@ -7,9 +7,22 @@ body {
 }
 
 header {
-  background-color: #282c34;
+  background-image: url('./images/header-background.jpg'); /* Header Photo by Babak Habibi www.unsplash.com */
+  background-size: cover; /* Ensures the image covers the header area */
+  height:500px;
+  background-position: center; /* Centers the image */
   padding: 20px;
-  color: white;
+}
+
+header h1 {
+  font-family: "Poppins", sans-serif;
+  font-size: 7rem; /* Adjust size as needed */
+  color: #711111; /* Text color */
+  text-shadow:
+          -2px -2px 0 #ffffff,
+          2px -2px 0 #ffffff,
+          -2px  2px 0 #ffffff,
+          2px  2px 0 #ffffff; /* Outline color and width */
 }
 
 .product-list {
@@ -21,7 +34,7 @@ header {
 
 .product {
   border: 1px solid #ddd;
-  padding: 20px;
+  padding: 10px;
   margin: 10px;
   width: 200px;
   text-align: center;
@@ -35,5 +48,28 @@ header {
   border: 1px solid #ddd;
   padding: 20px;
   margin: 20px;
+  /* Pushes the cart to the right if inside a flex container */
+  margin-left: auto;
+}
+
+button {
+  font-size: 1rem; /* Adjust the size as needed */
+  background-color: #711111; /* Background color */
+  color: white; /* Text color */
+  border: 2px solid #360707; /* Outline color and thickness */
+  border-radius: 5px; /* Rounded corners */
+  padding: 10px 20px; /* Adjust padding for size */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
+  cursor: pointer; /* Pointer cursor on hover */
+  transition: background-color 0.3s, box-shadow 0.3s; /* Smooth transition */
+}
+
+button:hover {
+  background-color: #360707; /* Darker background on hover */
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* Darker shadow on hover */
+}
+
+button:focus {
+  outline: none; /* Remove default focus outline */
 }
 
