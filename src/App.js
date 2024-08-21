@@ -11,9 +11,20 @@ const App = () => {
     const [showPersistentPopup, setShowPersistentPopup] = useState(true);
 
     const products = [
-        { id: 1, name: 'Product 1', price: 29.99, image: 'https://via.placeholder.com/150' },
-        { id: 2, name: 'Product 2', price: 19.99, image: 'https://via.placeholder.com/150' },
-        { id: 3, name: 'Product 3', price: 39.99, image: 'https://via.placeholder.com/150' },
+        { id: 1, name: 'Signature Latte', price: 6.99, image: './productimages/espresso.png' }, /*Unsplash photographer*/
+        { id: 2, name: 'Iced Coffee', price: 6.99, image: './productimages/iced-coffee.jpg' }, /*Unsplash photographer*/
+        { id: 3, name: 'Cloud Iced Latte', price: 7.99, image: './productimages/iced-latte.jpg' }, /*Unsplash photographer*/
+        { id: 4, name: 'Iced Matcha', price: 7.99, image: './productimages/iced-matcha.jpg' }, /*Unsplash photographer*/
+        { id: 5, name: 'Home Brew', price: 6.99, image: './productimages/drip-coffee.jpg' }, /*Unsplash photographer*/
+        { id: 6, name: 'Honey Green Tea', price: 7.99, image: './productimages/honey-tea.jpg' }, /*Unsplash photographer*/
+        { id: 7, name: 'Iced Hibiscus', price: 7.99, image: './productimages/iced-hibiscus.jpg' }, /*Unsplash photographer*/
+        { id: 8, name: 'Amerie Waffle', price: 12.99, image: './productimages/waffle.jpg' }, /*Unsplash photographer*/
+        { id: 9, name: 'Blueberry Danish', price: 5.99, image: './productimages/blueberrydanish.jpg' }, /*Unsplash photographer*/
+        { id: 10, name: 'Nutella Pie', price: 6.99, image: './productimages/nutella-pie.jpg' }, /*Unsplash photographer*/
+        { id: 10, name: 'Pancakes', price: 6.99, image: './productimages/pancakes.jpg' }, /*Unsplash photographer*/
+        { id: 10, name: 'Breakfast Pizza', price: 6.99, image: './productimages/pizza.jpg' }, /*Unsplash photographer*/
+        { id: 11, name: 'Brooklyn Bagel', price: 10.99, image: './productimages/brooklyn-bagel.jpg' }, /*Unsplash photographer*/
+        { id: 12, name: 'Eggs Benedict', price: 16.99, image: './productimages/eggs-benedict.jpg' }, /*Unsplash photographer*/
     ];
 
     const addToCart = (product) => {
