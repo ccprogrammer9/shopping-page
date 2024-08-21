@@ -25,6 +25,13 @@ const App = () => {
         { id: 10, name: 'Breakfast Pizza', price: 6.99, image: './productimages/pizza.jpg' }, /*Unsplash photographer*/
         { id: 11, name: 'Brooklyn Bagel', price: 10.99, image: './productimages/brooklyn-bagel.jpg' }, /*Unsplash photographer*/
         { id: 12, name: 'Eggs Benedict', price: 16.99, image: './productimages/eggs-benedict.jpg' }, /*Unsplash photographer*/
+        { id: 8, name: 'Tomato Soup', price: 12.99, image: './productimages/tomato-soup.jpg' }, /*Unsplash photographer*/
+        { id: 9, name: 'Mexican Stirfry', price: 5.99, image: './productimages/mexican-stirfry.jpg' }, /*Unsplash photographer*/
+        { id: 10, name: 'House Salad', price: 6.99, image: './productimages/salad.jpg' }, /*Unsplash photographer*/
+        { id: 10, name: 'Kale Pasta', price: 6.99, image: './productimages/kale-pasta.jpg' }, /*Unsplash photographer*/
+        { id: 10, name: 'Poke Bowl', price: 6.99, image: './productimages/poke-bowl.jpg' }, /*Unsplash photographer*/
+        { id: 11, name: 'Squash Soup', price: 10.99, image: './productimages/squash.jpg' }, /*Unsplash photographer*/
+        { id: 12, name: 'House Burrito', price: 16.99, image: './productimages/burrito.jpg' }, /*Unsplash photographer*/
     ];
 
     const addToCart = (product) => {
