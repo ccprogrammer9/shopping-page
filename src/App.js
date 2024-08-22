@@ -1,14 +1,17 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Route, Routes, useNavigate } from 'react-router-dom'; // Import BrowserRouter, Routes, Route, and useNavigate
 import ProductList from './components/ProductList';
 import Cart from './components/Cart';
 import Popup from './components/Popup';
 import PersistentPopup from './components/PersistentPopup';
+import Checkout from './components/Checkout'; // Import Checkout component
 import './App.css';
 
 const App = () => {
     const [cart, setCart] = useState([]);
     const [showPopup, setShowPopup] = useState(false);
     const [showPersistentPopup, setShowPersistentPopup] = useState(true);
+    const navigate = useNavigate(); // useNavigate hook for navigation
 
     const products = [
         { id: 1, name: 'Signature Latte', price: 6.99, image: './productimages/espresso.png' }, /*Unsplash photographer*/
@@ -38,6 +41,10 @@ const App = () => {
         setCart([...cart, product]);
     };
 
+    const removeFromCart = (index) => {
+        setCart(cart.filter((_, i) => i !== index));
+    };
+
     const togglePopup = () => {
         setShowPopup(!showPopup);
     };
@@ -46,34 +53,43 @@ const App = () => {
         setShowPersistentPopup(false);
     };
 
-    // Effect to run once on page load
+    // Function to handle checkout button click
+    const handleCheckout = () => {
+        navigate('/checkout');
+    };
+
     useEffect(() => {
-        // You can add any logic that should run when the component mounts
+        // Any logic that needs to run when the component mounts
     }, []);
 
     return (
         <div className="app">
             <header>
                 <h1>Amerie Cafe</h1>
+                <h2>4115 Boulevard Saint-Jean Montreal PH: 514-786-9844</h2>
             </header>
             <main>
-                <ProductList products={products} addToCart={addToCart} />
-                <Cart cartItems={cart} />
-
-                {/* Button to show the pop-up */}
-                <button onClick={togglePopup}>15% COUPON CODE</button>
-
-                {/* Conditionally render the pop-up */}
-                {showPopup && <Popup message="ILUVCOFFEE" closePopup={togglePopup} />}
-
-                {/* Persistent pop-up */}
-                {showPersistentPopup && <PersistentPopup closePopup={closePersistentPopup} />}
+                <Routes>
+                    <Route
+                        path="/"
+                        element={
+                            <>
+                                <ProductList products={products} addToCart={addToCart} />
+                                <Cart cartItems={cart} removeFromCart={removeFromCart} />
+                                <button onClick={togglePopup}>15% COUPON CODE</button>
+                                {showPopup && <Popup message="ILUVCOFFEE" closePopup={togglePopup} />}
+                                {showPersistentPopup && <PersistentPopup closePopup={closePersistentPopup} />}
+                                {cart.length > 0 && (
+                                    <button onClick={handleCheckout}>Proceed to Checkout</button>
+                                )}
+                            </>
+                        }
+                    />
+                    <Route path="/checkout" element={<Checkout cartItems={cart} />} />
+                </Routes>
             </main>
         </div>
     );
 };
 
 export default App;
-
-
-

@@ -18,6 +18,19 @@ header h1 {
   font-family: "Poppins", sans-serif;
   font-size: 7rem; /* Adjust size as needed */
   color: #711111; /* Text color */
+  margin-bottom: 10px;
+  text-shadow:
+          -2px -2px 0 #ffffff,
+          2px -2px 0 #ffffff,
+          -2px  2px 0 #ffffff,
+          2px  2px 0 #ffffff; /* Outline color and width */
+}
+
+header h2 {
+  font-family: "Poppins", sans-serif;
+  font-size: 2rem; /* Adjust size as needed */
+  color: #711111; /* Text color */
+  margin-top: 10px;
   text-shadow:
           -2px -2px 0 #ffffff,
           2px -2px 0 #ffffff,
@@ -59,6 +72,8 @@ button {
   color: white; /* Text color */
   border: 2px solid #360707; /* Outline color and thickness */
   border-radius: 5px; /* Rounded corners */
+  margin-right: 10px;
+  margin-bottom: 30px;
   padding: 10px 20px; /* Adjust padding for size */
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* Shadow effect */
   cursor: pointer; /* Pointer cursor on hover */
